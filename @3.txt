@@ -1,0 +1,25 @@
+using System;
+namespace _3 {
+    class Program {
+        static int L, n, MIN, MAX;
+        static int[] x;
+        static void Solve() {
+            MIN = Math.Min(x[0], (L - x[0]));
+            MAX = Math.Max(x[0], (L - x[0]));
+            for (int i = 1; i < x.Length; i++) {
+                if (MIN < Math.Min(x[i], (L - x[i])))
+                    MIN = Math.Min(x[i], (L - x[i]));
+                if (MAX < Math.Max(x[0], (L - x[0])))
+                    MAX = Math.Max(x[0], (L - x[0]));
+            }
+            Console.WriteLine("MIN:" + MIN);
+            Console.WriteLine("MAX:" + MAX);
+        }
+        static void Main(string[] args) {
+            L = int.Parse(Console.ReadLine());
+            n = int.Parse(Console.ReadLine());
+            x = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+            Solve();
+        }
+    }
+}
