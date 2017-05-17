@@ -8,9 +8,9 @@ namespace _4 {
         static int[] a;
         static void Solve() {
             if (dfs(0, 0))
-                Console.WriteLine("Yes");
+                Console.WriteLine("はい");
             else
-                Console.WriteLine("False");
+                Console.WriteLine("エラーだゾ");
         }
         static bool dfs(int i,int sum) {
             if (i == a.Length) return (sum == k);
